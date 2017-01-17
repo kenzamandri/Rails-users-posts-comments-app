@@ -1,0 +1,22 @@
+<div><%= @message %></div>
+
+<br><br>
+
+<%= @user.id %>.
+<%= @user.fname %>
+<%= @user.lname %>,
+<%= @user.username %>,
+<%= @user.email %>,
+
+
+<hr>
+
+<br><br>
+
+<div>Posts by this Awesome User:</div>
+
+  <% @user_posts.each do |post| %>
+    <%= post.id %>.
+    <%= link_to (post.title), post_path(post.id) %>
+    <br><br>
+  <% end %>

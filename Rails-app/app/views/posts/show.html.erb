@@ -1,0 +1,39 @@
+<h3>Post Awesome Page </h3>
+
+<%= @post.id %>.
+<%= @post.title %> <br>
+<%= @post.content %> <br>
+Written by: <%= @post.user.fname %> <%= @post.user.lname %>
+<hr>
+
+<h3>Comments by users:</h3>
+
+<% @comments.each do |comment| %>
+
+  <%= comment.content %>
+
+
+  <%= link_to ("Show Comment"), comment_path(comment.id) %>
+
+<br>
+
+<% end %>
+
+<hr>
+
+
+<%= form_for Comment.new do |f| %>
+
+  <%= f.label :content %>
+  <%= f.text_field :content %> <br>
+
+  <%= f.label :user %><br>
+  <%= f.collection_select :user_id, User.all, :id, :fname %>
+
+  <%= f.label :post %><br>
+  <%= f.collection_select :post_id, Post.all, :id, :title %>
+
+  <br><br>
+
+  <%= f.submit %>
+<% end %>

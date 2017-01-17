@@ -1,0 +1,20 @@
+<h3>Register for my app!</h3>
+
+<%= form_for User.new do |f| %>
+  <%= f.label :fname %>
+  <%= f.text_field :fname %> <br>
+
+  <%= f.label :lname %>
+  <%= f.text_field :lname %> <br>
+
+  <%= f.label :username %>
+  <%= f.text_field :username %> <br>
+
+  <%= f.label :email %>
+  <%= f.text_field :email %> <br>
+
+  <%= f.label :password %>
+  <%= f.text_field :password %> <br>
+
+  <%= f.submit %>
+<% end %>

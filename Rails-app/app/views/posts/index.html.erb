@@ -1,0 +1,18 @@
+<h2>All Posts are Here: </h2>
+
+<%= link_to ("Create New Post"), new_post_path %>
+
+<br><br>
+
+<% @posts.each do |post| %>
+  <%= post.id %>.
+  <%= post.title %> <br>
+  <%= post.content %> <br>
+
+  <br><br>
+
+  <%= link_to ("Post Profile Page"), post_path(post.id) %> |
+  <%= link_to "Delete Post",  { action: :destroy, id: post.id }, method: :delete %>
+  <hr>
+
+<% end %>

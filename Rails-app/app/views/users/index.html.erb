@@ -1,0 +1,15 @@
+<% @users.each do |user| %>
+      <%= user.id %>.
+      <%= user.fname %>,
+      <%= user.lname %>,
+      <%= user.username %>,
+      <%= user.email %>,
+      <%= user.password %>
+
+  <br><br><br>
+
+  <%= link_to ("User Profile Page"), user_path(user.id) %> |
+  <%= link_to "Delete User",  {action: :destroy, id: user.id}, method: :delete %>
+  <hr>
+
+<% end %>

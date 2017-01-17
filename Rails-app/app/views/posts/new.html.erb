@@ -1,0 +1,16 @@
+<h3>Create new post!</h3>
+
+<%= form_for Post.new do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %> <br>
+
+  <%= f.label :content %>
+  <%= f.text_field :content %> <br>
+
+  <%= f.label :user %><br>
+  <%= f.collection_select :user_id, User.all, :id, :fname %>
+
+  <br><br>
+
+  <%= f.submit %>
+<% end %>
